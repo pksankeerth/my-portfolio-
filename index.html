@@ -1,7 +1,161 @@
-.card h5 {
-    color: #06b6d4;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sankeerth | Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
 }
 
-.card p {
-    color: #cbd5e1;
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+.hero h1 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.hero p {
+  color: #94a3b8;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.card {
+  background: #1e293b;
+  border: none;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #020617;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div>
+<h1>Sankeerth</h1>
+<p>MCA Student • SQL Specialist • Full Stack Builder</p>
+</div>
+</section>
+
+<section class="section fade-in">
+<div class="container text-center">
+<h2>About</h2>
+<p>MCA student with a strong focus on SQL and performance-driven development. I enjoy building systems where data, logic, and user experience work together efficiently.</p>
+<p>Co-founder at H&H Project Space, where I've worked on AI tools, dashboards, and full-stack platforms across MERN, Django, and PHP environments.</p>
+<p>My interest lies in solving real-world problems using clean architecture, optimized queries, and scalable web applications.</p>
+</div>
+</section>
+
+<section class="section fade-in">
+<div class="container">
+<h2 class="text-center">Skills</h2>
+<div class="row text-center">
+<div class="col-md-4">
+<div class="card p-4">
+<h5>Frontend</h5>
+<p>React, HTML, CSS, JS</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-4">
+<h5>Database</h5>
+<p>MySQL, MongoDB</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-4">
+<h5>Core</h5>
+<p>SQL Optimization</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section fade-in">
+<div class="container">
+<h2 class="text-center">Experience</h2>
+<div class="card p-4 mb-3">
+<h5>Co-Founder • H&H Project Space</h5>
+<p>Delivered AI-powered applications, dashboards, and client platforms across multiple stacks.</p>
+</div>
+</div>
+</section>
+
+<section class="section fade-in">
+<div class="container">
+<h2 class="text-center">Projects</h2>
+<div class="card p-4 mb-3">
+<h5>Hospital Landing Portal</h5>
+<p>Improved accessibility & performance using optimized UI.</p>
+</div>
+<div class="card p-4">
+<h5>Smart Furniture Store</h5>
+<p>Interactive product catalog with brand visuals.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Sankeerth</p>
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+faders.forEach(fade => observer.observe(fade));
+</script>
+
+</body>
+</html>
